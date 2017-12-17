@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>点餐系统</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="author" content="" />
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/buttons.css" rel="stylesheet" />
+    <link href="css/flat.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+</head>
+<body>
+<div id="wrapper" class="viewer">
+    <div id="sidebar-wrapper">
+        <div class="well sidebar-nav">
+            <nav id="J_menuList" class="nav nav-list">
+                1111
+            </nav>
+        </div>
+    </div>
+    <div id="page-content-wrapper" class="">
+        <div class="page-content">
+            <div class="container" id="J_list_Container">
+                222
+            </div>
+        </div>
+    </div>
+    <footer class="footFix footLeft">
+        <button id="myOrder" class="btn_change">
+            我的菜单
+            <!--span class="num">9</span-->
+        </button>
+    </footer>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+
+        var iG = iG||{};
+
+        function listManger(_list){
+            var result = "";
+            var listArr = [];
+            var indexList = _list[iG.indexMenu];
+            for(var i in indexList){
+                listArr.push(indexList[i]);
+                if(Math.floor(i/3)===0&&i>2){
+                    result += "<div class=\"row\">";
+                    result += buildList(listArr);
+                    result += "</div>";
+                    listArr = [];
+                }
+            }
+            result += "<div class=\"row\">";
+            result += buildList(listArr);
+            result += "</div>";
+            return result;
+        }
+        function buildList(_list){
+            var result = "";
+            for(var i in _list){
+                result += "<div class=\"col-md-4 clearfix foot-items\"><div class=\"col-xs-4 foot-img\"><img src=\""+_list[i].icon+"\" class=\"img-responsive\" alt=\"Responsive image\" data_id=\""+_list[i].id+"\" ></div><div class=\"col-xs-6 foot-info\"><p><strong>"+_list[i].name+"</strong></p><p class=\"colred\">"+_list[i].price+"元/粒</p><p><small>"+_list[i].description+"</small></p></div><div class=\"col-xs-2 icons-pick foot-pick\"><div class=\"btn_wrap\"><button class=\"minus\" style=\"display: none;\"><strong></strong></button><i style=\"display: none;\">0</i><button class=\"list_add list_id_respone\" data_id=\""+_list[i].id+"\"><strong></strong></button><em class=\"fixBig  fake\"></em></div></div></div>"
+                //<button ontouchstart=\"\" class=\"list_id_respone button button-circle button-flat-primary fa fa-plus\" data_id=\""+_list[i].id+"\"></button>
+            }
+            return result;
+        }
+        function init(){
+            setMenu(iG.items);
+            $("#J_list_Container").html(listManger(iG.items));
+            $("#loadingView").addClass("hide");
+        }
+
+        function setMenu(_list){
+            iG.menu = [];
+            iG.indexMenu = (function(){
+                var menu;
+                var count = 0;
+                for(var i in _list){
+                    if(count===0){
+                        menu = i;  // 默认选中第一个
+                    }
+                    count++;
+                    iG.menu.push(i);
+                }
+                return menu;
+            })();
+            buildMenu(iG.menu);
+        }
+
+        function buildMenu(_list){
+            var menuHtml = "<dl>";
+            var active;
+            for(var i in _list){
+                active = "";
+                if(_list[i]===iG.indexMenu)active = "active";
+                menuHtml += "<dd class=\""+active+"\"><a data_name=\""+ _list[i] +"\">"+ _list[i] +"</a></dd>"
+
+            }
+            menuHtml += "</dl>";
+            $("#J_menuList").html(menuHtml);
+        }
+
+        $("body").on("click","#J_menuList dd a",function(){
+            iG.indexMenu = $(this).attr("data_name");
+            $("#J_list_Container").html(listManger(iG.items));
+            $("#J_menuList .active").removeClass("active");
+            $(this).parent("dd").addClass("active");
+        });
+
+        // setTimeout(function () {
+        //     var data = [
+        //         {
+        //             "name": "热榜",
+        //             "type": 1,
+        //             "foods": [
+        //                 {
+        //                     "id": "123456",
+        //                     "name": "皮蛋粥",
+        //                     "price": 12,
+        //                     "description": "好吃的皮蛋粥",
+        //                     "icon": "images/1.jpg",
+        //                 }
+        //             ]
+        //         },
+        //         {
+        //             "name": "好吃的",
+        //             "type": 2,
+        //             "foods": [
+        //                 {
+        //                     "id": "123457",
+        //                     "name": "慕斯蛋糕",
+        //                     "price": 10.9,
+        //                     "description": "美味爽口",
+        //                     "icon": "images/1.jpg",
+        //                 }
+        //             ]
+        //         }
+        //     ];
+        //     // 转成需要的格式
+        //     iG.items =  {};
+        //     for(var i in data){
+        //         iG.items[data[i].name] = data[i].foods;
+        //     }
+        //
+        //     init();//ajax成功后执行init();
+        // }, 20);//模拟ajax请求时间
+
+        $(function() {
+            setTimeout(function () {
+                window.scrollTo(0, 1);
+            }, 0);
+
+            $.ajax(
+                {
+                    type: "get",
+                    dataType: "JSONP",
+                    url: "http://127.0.0.1:8085/sell/buyer/product/list",
+                    jsonp:"callback",
+                    success: function (result) {
+                        //alert(result);
+                        //iG.items = result;
+                        //init();//ajax成功后执行init();
+                        result = result.data;
+                        iG.items =  {};
+                        for(var i in result){
+                            iG.items[result[i].name] = result[i].foods;
+                        }
+
+                        init();//ajax成功后执行init();
+                    }
+                }
+            );
+        });
+
+    </script>
+</div>
+</body>
+</html>
