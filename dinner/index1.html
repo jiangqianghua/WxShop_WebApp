@@ -17,6 +17,7 @@
     <!-- Le fav and touch icons -->
 </head>
 <body>
+<!-- 第一页菜单页面 -->
 <div id="wrapper" class="viewer">
     <div id="sidebar-wrapper">
         <div class="well sidebar-nav">
@@ -38,14 +39,142 @@
             <!--span class="num">9</span-->
         </button>
     </footer>
+</div>
+<!-- 第二页，提交订单页面 -->
+<div id="wrapper2" class="viewer wrapper countpage clearfix" style="display:none">
+    <section class="order_title">
+        <div class="container" id="">
+            <div class="col-md-12 clearfix foot_orderList">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p class="notice">
+                            请叫服务员下单
+                        </p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p class="notice tar">
+                            共计
+                            <span class="price" id="price_txt">
+                                315元
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="oder_content">
+        <div class="container" id="J_order_list">
+        </div>
+    </section>
+    <section class="oder_submit">
+        <div class="container">
+            <button class="button button-rounded button-flat-action fr mgtbr8" id="submitOrder">
+                提交
+            </button>
+        </div>
+    </section>
+</div>
+<!--  -->
+<div id="submitView" class="viewer clearfix" style="display:none">
+    <section class="submit_title">
+        <div class="container" id="">
+            <div class="col-md-12 clearfix">
+                <ul class="nav nav-tabs nav-separated">
+                    <li class="active">
+                        <a id="now_order">
+                            我在现场点菜
+                        </a>
+                    </li>
+                    <li>
+                        <a id="remote_order">
+                            我在远程点菜(送货上门)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-12 clearfix">
+                <div class="now_submit clearfix">
+                    <!--<form role="form" id="orderform" method="post" action="http://127.0.0.1:8085/sell//buyer/order/create">-->
+                        <div class="form-group" id="form_desk">
+                            <label for="desk">
+                                桌号
+                            </label>
+                            <span class="twitter-typeahead">
+                                <input type="text" name="desk" class="form-control tt-query" autocomplete="off"
+                                       spellcheck="false" dir="auto">
+                            </span>
+                        </div>
+                        <div class="line-body clearfix" id="form_more">
+                            <span class="fl lh43">
+                                我要补充资料成为会员
+                            </span>
+                            <ul class="nav nav-pills tabdrop fr">
+                                <li class="dropdown pull-right tabdrop">
+                                    <a class="dropdown-toggle" id="J_btn_reg">
+                                        <i class="fa fa-th-list">
+                                        </i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="form-group" id="form_info">
+                            <label for="phone">
+                                手机号码
+                            </label>
+                            <span class="twitter-typeahead">
+                                <input type="text" id="phone" class="form-control tt-query" autocomplete="off"
+                                       spellcheck="false" dir="auto">
+                            </span>
+                            <label for="name" class="mgt10">
+                                姓名
+                            </label>
+                            <span class="twitter-typeahead">
+                                <input type="text" id="name" class="form-control tt-query" autocomplete="off"
+                                       spellcheck="false" dir="auto">
+                            </span>
+                            <label for="adress" class="mgt10">
+                                地址
+                            </label>
+                            <span class="twitter-typeahead">
+                                <input type="text" id="adress" class="form-control tt-query" autocomplete="off"
+                                       spellcheck="false" dir="auto">
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <div class="btn_control fr">
+                                <a class="btn btn-default bottommargin" id="cancelSubmit">
+                                    取消
+                                </a>
+                                <button class="btn btn-info bottommargin" id="stickyGrowl">
+                                    确认
+                                </button>
+                            </div>
+                        </div>
+                    <!--</form>-->
 
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
     <script>
 
         var iG = iG||{};
-
+        // 从本地缓存加载出数据
+        if(window.localStorage){
+            try{
+                iG = JSON.parse(localStorage["wxshop"])||{};
+            }catch(e){
+                localStorage.removeItem("wxshop");
+                iG = iG||{};
+            }
+        }else{
+            iG = iG||{};
+        }
         function listManger(_list){
             var result = "";
             var listArr = [];
@@ -94,7 +223,7 @@
             })();
             buildMenu(iG.menu);
         }
-
+        // 构建菜单
         function buildMenu(_list){
             var menuHtml = "<dl>";
             var active;
@@ -107,13 +236,163 @@
             menuHtml += "</dl>";
             $("#J_menuList").html(menuHtml);
         }
-
+        //点击左边栏目
         $("body").on("click","#J_menuList dd a",function(){
             iG.indexMenu = $(this).attr("data_name");
             $("#J_list_Container").html(listManger(iG.items));
             $("#J_menuList .active").removeClass("active");
             $(this).parent("dd").addClass("active");
         });
+        //点击添加菜
+        $("body").on("click",".list_id_respone",function(){
+            iG["order"] = iG["order"]||{};
+            var index = $(this).attr("data_id");
+
+            if(iG.order[index]){
+                iG.order[index].counter = iG.order[index].counter + 1;
+            }else{
+                var obj = getIndex(index);
+                iG.order[index] = obj;
+                iG.order[index].counter = 1;
+            }
+            // 存储在本地缓存
+            if(window.localStorage){
+                localStorage["wxshop"] = JSON.stringify(iG);
+            }
+        });
+        //点击我的菜单时间
+        $("#myOrder").click(function(){
+            $(".wrapper,#wrapper").removeClass("show");
+            $(".wrapper,#wrapper").removeClass("hide");
+            $("#wrapper").addClass("hide");
+            $("#wrapper2").addClass("show")
+            //$("#J_order_Manager").siblings("div").remove();
+            $("#J_order_list").html(buildOrder(iG.order));
+            $("#price_txt").html(countPrice() + "元");
+        });
+        // 点击加菜按钮
+        $("body").on("click","#addOrder",function(){
+            $(".wrapper,#wrapper").removeClass("show");
+            $(".wrapper,#wrapper").removeClass("hide");
+            $("#wrapper").addClass("show");
+            $("#wrapper2").addClass("hide");
+        });
+        // 点击清空点好的菜单
+        $("body").on("click","#clearOder",function(){
+            iG["order"] = {};
+            $("#J_order_list").html(buildOrder(iG.order));
+            $("#price_txt").html(countPrice() + "元");
+            if(window.localStorage){
+                localStorage["zaiG"] = JSON.stringify(iG);
+            }
+        });
+        // 在选好的订单页面添加菜的数量
+        $("body").on("click",".counter_plus",function(){
+            iG["order"] = iG["order"]||{};
+            var index = $(this).attr("data_id");
+
+            if(iG.order[index]){
+                iG.order[index].counter = iG.order[index].counter + 1;
+            }else{
+                var obj = getIndex(index);
+                iG.order[index] = obj;
+                iG.order[index].counter = 1;
+            }
+            $(this).siblings(".nocounter").html(iG.order[index].counter);
+            $("#price_txt").html(countPrice() + "元");
+            if(window.localStorage){
+                localStorage["zaiG"] = JSON.stringify(iG);
+            }
+        });
+        // 在选好的订单页面减去菜的数量
+        $("body").on("click",".counter_minus",function(){
+            iG["order"] = iG["order"]||{};
+            var index = $(this).attr("data_id");
+            if(iG.order[index].counter === 0)return;
+            if(iG.order[index]){
+                iG.order[index].counter = iG.order[index].counter - 1;
+            }else{
+                var obj = getIndex(index);
+                iG.order[index] = obj;
+                iG.order[index].counter = 1;
+            }
+            $(this).siblings(".nocounter").html(iG.order[index].counter);
+            $("#price_txt").html(countPrice() + "元");
+            if(window.localStorage){
+                localStorage["zaiG"] = JSON.stringify(iG);
+            }
+        });
+        // 第二个订单页，点击提交按钮
+        $("#submitOrder").click(function(){
+            $(".viewer:visible").removeClass("show").addClass("hide");
+            $("#submitView").removeClass("hide").addClass("show");
+        })
+        // 构建第二页的选中的菜单
+        function buildOrder(_list){
+            var result = "<div class=\"row\" id=\"J_order_Manager\"><div class=\"col-xs-12 clearfix board_content\"><div class=\"col-xs-4 title_contain\"><p class=\"menu_title \">我的菜单</p></div><div class=\"col-xs-2\"></div><div class=\"col-xs-3 title_contain\"><button class=\"button button-rounded button-flat-action\" id=\"addOrder\">加菜</button></div><div class=\"col-xs-3 title_contain\"><button id=\"clearOder\"class=\"button button-rounded button-flat\">清空</button></div></div></div>";
+            var check = true;
+
+            for(var i in _list){
+                if(_list[i].counter === 0)continue;
+                check = false;
+                result += "<div class=\"row gray_line\"><div class=\"col-md-12 clearfix board_content\"><div class=\"col-xs-6\"><div class=\"col-md-6 clearfix order_item_name\"><label>"+_list[i].name+"</label></div><div class=\"col-md-6 clearfix order_price\">"+_list[i].price+"元一例</div></div><div class=\"col-xs-6\"><div class=\"btn_wrap counter\"><button class=\"list_minus counter_minus fl\" style=\"display: inline-block;\" data_id=\""+_list[i].id+"\" ontouchstart=\"\"><strong></strong></button><i class=\"nocounter fl\" style=\"display: inline-block;\">"+_list[i].counter+"</i><button class=\"list_add counter_plus\" data_id=\""+_list[i].id+"\" ontouchstart=\"\"><strong></strong></button><em class=\"fixBig  fake\"></em></div></div></div></div>";
+
+
+            }
+            if(check){
+                result += "<div class=\"row gray_line\"><div class=\"col-md-12 clearfix board_content\"><p style=\"text-align: center;\"><span>亲，还没选到心仪的菜喔，点加菜开始选菜吧！</span></p></div></div>";
+            }
+            return result;
+        }
+
+        // 点击我在现场点菜
+        $("#now_order").click(function(){
+            $(".nav-tabs li.active").removeClass("active");
+            $(this).parent("li").addClass("active");
+            $("#form_desk").slideDown();
+            $("#form_more").slideDown();
+            $("#form_info").slideUp();
+        });
+
+        // 点击我在远程点菜
+        $("#remote_order").click(function(){
+            $(".nav-tabs li.active").removeClass("active");
+            $(this).parent("li").addClass("active");
+            $("#form_desk").slideUp();
+            $("#form_more").slideUp();
+            $("#form_info").slideDown();
+        });
+
+        // 取消提交订单
+        $("#cancelSubmit").click(function(){
+            $(".viewer:visible").removeClass("show").addClass("hide");
+            $("#wrapper2").removeClass("hide").addClass("show");
+        });
+
+        // 提交订单给服务器
+        $("#stickyGrowl").click(function(){
+            // 构建数据
+            var orderdata = createSubmitOrderData();
+            orderSubmitToServer(orderdata);
+        });
+        // 计算从价格
+        function countPrice(){
+            var price = 0;
+            for(var i in iG.order){
+                price += Number(iG.order[i].price)*iG.order[i].counter;
+            }
+            return price;
+        }
+        // 根据菜单id获取对应的所有属性
+        function getIndex(_id){
+            var indexList = iG.items[iG.indexMenu];
+            for(var i in indexList){
+                if(indexList[i].id===_id){
+                    return indexList[i]
+                }
+            }
+        }
+
 
         // setTimeout(function () {
         //     var data = [
@@ -161,13 +440,8 @@
             $.ajax(
                 {
                     type: "get",
-                    dataType: "JSONP",
                     url: "http://127.0.0.1:8085/sell/buyer/product/list",
-                    jsonp:"callback",
                     success: function (result) {
-                        //alert(result);
-                        //iG.items = result;
-                        //init();//ajax成功后执行init();
                         result = result.data;
                         iG.items =  {};
                         for(var i in result){
@@ -180,7 +454,43 @@
             );
         });
 
+        // 构建要提交的post数据
+        var createSubmitOrderData = function () {
+            var orderData = '';
+            orderData += 'name='+$('#name').val();
+            orderData += '&phone='+$('#phone').val();
+            orderData += '&address='+$('#adress').val();
+            orderData += '&openid=15070044934';
+            var orderItems = '&items=[';
+            var index = 0 ;
+            for(var i in iG.order){
+                if(iG.order[i].counter === 0)continue;
+                if(index > 0)
+                    orderItems +=',{';
+                else
+                    orderItems +='{';
+                orderItems += 'productId:"'+iG.order[i].id+'",productQuantity:'+iG.order[i].counter+'}';
+                index++ ;
+            }
+            orderItems += ']';
+            orderData += orderItems ;
+            return orderData;
+        }
+        // 提交订单给服务器
+        var orderSubmitToServer = function(_orderdata){
+            //name=江强华20171218&phone=15070044932&address=公益西桥5&openid=150700jiang&items=[{productId: "1513352483494442298",productQuantity: 1},{productId: "33344",productQuantity: 1}]'
+            $.ajax(
+                {
+                    type:"POST",
+                    data:_orderdata,
+                    url: "http://127.0.0.1:8085/sell/buyer/order/create",
+                    success: function (result) {
+                        alert(result);
+                    }
+                }
+            );
+        }
+
     </script>
-</div>
 </body>
 </html>
