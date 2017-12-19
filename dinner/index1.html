@@ -22,20 +22,22 @@
     <div id="sidebar-wrapper">
         <div class="well sidebar-nav">
             <nav id="J_menuList" class="nav nav-list">
-                1111
             </nav>
         </div>
     </div>
     <div id="page-content-wrapper" class="">
         <div class="page-content">
             <div class="container" id="J_list_Container">
-                222
             </div>
         </div>
     </div>
     <footer class="footFix footLeft">
         <button id="myOrder" class="btn_change">
             我的菜单
+            <!--span class="num">9</span-->
+        </button>
+        <button id="myOrderlist" class="btn_change">
+            我的订单
             <!--span class="num">9</span-->
         </button>
     </footer>
@@ -164,6 +166,7 @@
     <script>
 
         var iG = iG||{};
+        var openid = '15070044934';
         // 从本地缓存加载出数据
         if(window.localStorage){
             try{
@@ -260,7 +263,7 @@
                 localStorage["wxshop"] = JSON.stringify(iG);
             }
         });
-        //点击我的菜单时间
+        //点击我的菜单事件
         $("#myOrder").click(function(){
             $(".wrapper,#wrapper").removeClass("show");
             $(".wrapper,#wrapper").removeClass("hide");
@@ -269,6 +272,10 @@
             //$("#J_order_Manager").siblings("div").remove();
             $("#J_order_list").html(buildOrder(iG.order));
             $("#price_txt").html(countPrice() + "元");
+        });
+        // 点击我的订单列表事件
+        $("#myOrderlist").click(function(){
+            location.href = "orderlist.html";
         });
         // 点击加菜按钮
         $("body").on("click","#addOrder",function(){
@@ -279,12 +286,7 @@
         });
         // 点击清空点好的菜单
         $("body").on("click","#clearOder",function(){
-            iG["order"] = {};
-            $("#J_order_list").html(buildOrder(iG.order));
-            $("#price_txt").html(countPrice() + "元");
-            if(window.localStorage){
-                localStorage["zaiG"] = JSON.stringify(iG);
-            }
+            cleanOrder();
         });
         // 在选好的订单页面添加菜的数量
         $("body").on("click",".counter_plus",function(){
@@ -460,7 +462,7 @@
             orderData += 'name='+$('#name').val();
             orderData += '&phone='+$('#phone').val();
             orderData += '&address='+$('#adress').val();
-            orderData += '&openid=15070044934';
+            orderData += '&openid='+openid;
             var orderItems = '&items=[';
             var index = 0 ;
             for(var i in iG.order){
@@ -485,12 +487,24 @@
                     data:_orderdata,
                     url: "http://127.0.0.1:8085/sell/buyer/order/create",
                     success: function (result) {
-                        alert(result);
+                        if(result.code === 0) {
+                            cleanOrder();
+                            var orderid = result.data.orderId;
+                            location.href = "orderdetail.html?orderid="+orderid;
+                        }
                     }
                 }
             );
         }
 
+        var cleanOrder = function(){
+            iG["order"] = {};
+            $("#J_order_list").html(buildOrder(iG.order));
+            $("#price_txt").html(countPrice() + "元");
+            if(window.localStorage){
+                localStorage["zaiG"] = JSON.stringify(iG);
+            }
+        }
     </script>
 </body>
 </html>

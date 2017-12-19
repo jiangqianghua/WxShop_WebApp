@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42e0ca55-4b0a-440a-a854-3d251ee05189" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dinner/orderdetail.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dinner/orderlist.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/dinner/index1.html" afterPath="$PROJECT_DIR$/dinner/index1.html" />
     </list>
@@ -29,11 +30,9 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-              <folding>
-                <marker date="1513612265000" expanded="true" signature="31736:31753" ph="..." />
-              </folding>
+            <state relative-caret-position="304">
+              <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -51,7 +50,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dinner/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
+            <state relative-caret-position="3192">
               <caret line="168" column="89" lean-forward="false" selection-start-line="168" selection-start-column="78" selection-end-line="168" selection-end-column="89" />
               <folding>
                 <marker date="1513605566000" expanded="true" signature="16609:16623" ph="..." />
@@ -67,8 +66,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="147" column="57" lean-forward="false" selection-start-line="147" selection-start-column="52" selection-end-line="147" selection-end-column="57" />
+            <state relative-caret-position="244">
+              <caret line="147" column="32" lean-forward="false" selection-start-line="147" selection-start-column="32" selection-end-line="149" selection-end-column="41" />
               <folding>
                 <marker date="1422341866000" expanded="true" signature="17450:17464" ph="..." />
                 <marker date="1422341866000" expanded="true" signature="17504:17518" ph="..." />
@@ -80,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="order.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/order.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="44" column="35" lean-forward="false" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="35" />
+            <state relative-caret-position="-276">
+              <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -93,15 +92,37 @@
       <file leaf-file-name="index1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dinner/index1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="487" column="24" lean-forward="false" selection-start-line="487" selection-start-column="24" selection-end-line="487" selection-end-column="38" />
+            <state relative-caret-position="290">
+              <caret line="277" column="12" lean-forward="true" selection-start-line="277" selection-start-column="12" selection-end-line="277" selection-end-column="45" />
               <folding>
-                <marker date="1513612242000" expanded="true" signature="8149:8163" ph="..." />
-                <marker date="1513612242000" expanded="true" signature="8203:8217" ph="..." />
-                <marker date="1513612242000" expanded="true" signature="14400:14422" ph="..." />
-                <marker date="1513612242000" expanded="true" signature="14531:14553" ph="..." />
-                <marker date="1513612242000" expanded="true" signature="14905:14924" ph="..." />
+                <marker date="1513698730000" expanded="true" signature="8276:8290" ph="..." />
+                <marker date="1513698730000" expanded="true" signature="8330:8344" ph="..." />
+                <marker date="1513698730000" expanded="true" signature="14424:14446" ph="..." />
+                <marker date="1513698730000" expanded="true" signature="14555:14577" ph="..." />
+                <marker date="1513698730000" expanded="true" signature="14929:14948" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="orderdetail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dinner/orderdetail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="101" column="62" lean-forward="false" selection-start-line="101" selection-start-column="51" selection-end-line="101" selection-end-column="62" />
+              <folding>
+                <marker date="1513698550000" expanded="true" signature="2783:2805" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="orderlist.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dinner/orderlist.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="80" column="58" lean-forward="false" selection-start-line="80" selection-start-column="58" selection-end-line="80" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,26 +138,13 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>INIT(</find>
-      <find>J_list_Container</find>
-      <find>listManger</find>
-      <find>cls</find>
-      <find>J_menuList</find>
-      <find>click</find>
-      <find>indexMenu</find>
-      <find>list_id</find>
-      <find>myOrder</find>
       <find>zaig</find>
       <find>getIndex</find>
-      <find>buildOrder</find>
       <find>wrapper2</find>
       <find>countPrice</find>
-      <find>addOrder</find>
       <find>clearOder</find>
-      <find>list_add</find>
       <find>list_id_respone</find>
       <find>加菜</find>
-      <find>counter_plus</find>
       <find>nocounter</find>
       <find>iG.order[index].counter</find>
       <find>submitView</find>
@@ -147,6 +155,19 @@
       <find>cancelSubmit</find>
       <find>stickyGrowl</find>
       <find>orderSubmitToServer</find>
+      <find>order</find>
+      <find>cleanOrder</find>
+      <find>order.htm</find>
+      <find>oder_content</find>
+      <find>J_order_list</find>
+      <find>buildOrder</find>
+      <find>price_txt</find>
+      <find>myOrder</find>
+      <find>addOrder</find>
+      <find>list_add</find>
+      <find>counter_plus</find>
+      <find>J_order_Manager</find>
+      <find>data_id</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,7 +184,10 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/dinner/index1.htm.html" />
         <option value="$PROJECT_DIR$/dinner/index.html" />
+        <option value="$PROJECT_DIR$/dinner/order.html" />
+        <option value="$PROJECT_DIR$/dinner/orderdetail.html" />
         <option value="$PROJECT_DIR$/dinner/index1.html" />
+        <option value="$PROJECT_DIR$/dinner/orderlist.html" />
       </list>
     </option>
   </component>
@@ -194,6 +218,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,10 +236,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -221,6 +245,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dinner" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -332,11 +361,12 @@
       <updated>1513513344887</updated>
       <workItem from="1513513349425" duration="6932000" />
       <workItem from="1513599559861" duration="9878000" />
+      <workItem from="1513694355915" duration="7103000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16810000" />
+    <option name="totallyTimeSpent" value="23913000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="23" width="1260" height="679" extended-state="0" />
@@ -381,14 +411,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/dinner/index1.html</url>
-          <line>487</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/dinner/index1.html</url>
-          <line>476</line>
-          <properties lambdaOrdinal="-1" />
+          <line>478</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
@@ -407,11 +430,83 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WxShopWebApp.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dinner/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3192">
+          <caret line="168" column="89" lean-forward="false" selection-start-line="168" selection-start-column="78" selection-end-line="168" selection-end-column="89" />
+          <folding>
+            <marker date="1513605566000" expanded="true" signature="16609:16623" ph="..." />
+            <marker date="1513605566000" expanded="true" signature="16663:16677" ph="..." />
+            <marker date="1513605566000" expanded="true" signature="18021:18043" ph="..." />
+            <marker date="1513605566000" expanded="true" signature="18152:18174" ph="..." />
+            <marker date="1513605566000" expanded="true" signature="18504:18523" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2793">
+          <caret line="147" column="57" lean-forward="false" selection-start-line="147" selection-start-column="52" selection-end-line="147" selection-end-column="57" />
+          <folding>
+            <marker date="1422341866000" expanded="true" signature="17450:17464" ph="..." />
+            <marker date="1422341866000" expanded="true" signature="17504:17518" ph="..." />
+            <marker date="1422341866000" expanded="true" signature="18861:18883" ph="..." />
+            <marker date="1422341866000" expanded="true" signature="18992:19014" ph="..." />
+            <marker date="1422341866000" expanded="true" signature="19344:19363" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="44" column="35" lean-forward="false" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dinner/index1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9253">
+          <caret line="487" column="24" lean-forward="false" selection-start-line="487" selection-start-column="24" selection-end-line="487" selection-end-column="38" />
+          <folding>
+            <marker date="1513698730000" expanded="true" signature="8276:8290" ph="..." />
+            <marker date="1513698730000" expanded="true" signature="8330:8344" ph="..." />
+            <marker date="1513698730000" expanded="true" signature="14424:14446" ph="..." />
+            <marker date="1513698730000" expanded="true" signature="14555:14577" ph="..." />
+            <marker date="1513698730000" expanded="true" signature="14929:14948" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <marker date="1513612265000" expanded="true" signature="31736:31753" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -442,11 +537,11 @@
         <state relative-caret-position="3230">
           <caret line="170" column="33" lean-forward="false" selection-start-line="170" selection-start-column="33" selection-end-line="170" selection-end-column="33" />
           <folding>
-            <marker date="1513612242000" expanded="true" signature="8149:8163" ph="..." />
-            <marker date="1513612242000" expanded="true" signature="8203:8217" ph="..." />
-            <marker date="1513612242000" expanded="true" signature="14400:14422" ph="..." />
-            <marker date="1513612242000" expanded="true" signature="14531:14553" ph="..." />
-            <marker date="1513612242000" expanded="true" signature="14905:14924" ph="..." />
+            <marker date="1513698730000" expanded="true" signature="8276:8290" ph="..." />
+            <marker date="1513698730000" expanded="true" signature="8330:8344" ph="..." />
+            <marker date="1513698730000" expanded="true" signature="14424:14446" ph="..." />
+            <marker date="1513698730000" expanded="true" signature="14555:14577" ph="..." />
+            <marker date="1513698730000" expanded="true" signature="14929:14948" ph="..." />
           </folding>
         </state>
       </provider>
@@ -462,11 +557,9 @@
     <entry file="file://$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          <folding>
-            <marker date="1513612265000" expanded="true" signature="31736:31753" ph="..." />
-          </folding>
+        <state relative-caret-position="304">
+          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -508,23 +601,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="147" column="57" lean-forward="false" selection-start-line="147" selection-start-column="52" selection-end-line="147" selection-end-column="57" />
-          <folding>
-            <marker date="1422341866000" expanded="true" signature="17450:17464" ph="..." />
-            <marker date="1422341866000" expanded="true" signature="17504:17518" ph="..." />
-            <marker date="1422341866000" expanded="true" signature="18861:18883" ph="..." />
-            <marker date="1422341866000" expanded="true" signature="18992:19014" ph="..." />
-            <marker date="1422341866000" expanded="true" signature="19344:19363" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dinner/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
+        <state relative-caret-position="3192">
           <caret line="168" column="89" lean-forward="false" selection-start-line="168" selection-start-column="78" selection-end-line="168" selection-end-column="89" />
           <folding>
             <marker date="1513605566000" expanded="true" signature="16609:16623" ph="..." />
@@ -536,24 +615,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dinner/index1.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="487" column="24" lean-forward="false" selection-start-line="487" selection-start-column="24" selection-end-line="487" selection-end-column="38" />
+        <state relative-caret-position="244">
+          <caret line="147" column="32" lean-forward="false" selection-start-line="147" selection-start-column="32" selection-end-line="149" selection-end-column="41" />
           <folding>
-            <marker date="1513612242000" expanded="true" signature="8149:8163" ph="..." />
-            <marker date="1513612242000" expanded="true" signature="8203:8217" ph="..." />
-            <marker date="1513612242000" expanded="true" signature="14400:14422" ph="..." />
-            <marker date="1513612242000" expanded="true" signature="14531:14553" ph="..." />
-            <marker date="1513612242000" expanded="true" signature="14905:14924" ph="..." />
+            <marker date="1422341866000" expanded="true" signature="17450:17464" ph="..." />
+            <marker date="1422341866000" expanded="true" signature="17504:17518" ph="..." />
+            <marker date="1422341866000" expanded="true" signature="18861:18883" ph="..." />
+            <marker date="1422341866000" expanded="true" signature="18992:19014" ph="..." />
+            <marker date="1422341866000" expanded="true" signature="19344:19363" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/order.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="44" column="35" lean-forward="false" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="35" />
+        <state relative-caret-position="-276">
+          <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dinner/orderdetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="101" column="62" lean-forward="false" selection-start-line="101" selection-start-column="51" selection-end-line="101" selection-end-column="62" />
+          <folding>
+            <marker date="1513698550000" expanded="true" signature="2783:2805" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dinner/index1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="277" column="12" lean-forward="true" selection-start-line="277" selection-start-column="12" selection-end-line="277" selection-end-column="45" />
+          <folding>
+            <marker date="1513698730000" expanded="true" signature="8276:8290" ph="..." />
+            <marker date="1513698730000" expanded="true" signature="8330:8344" ph="..." />
+            <marker date="1513698730000" expanded="true" signature="14424:14446" ph="..." />
+            <marker date="1513698730000" expanded="true" signature="14555:14577" ph="..." />
+            <marker date="1513698730000" expanded="true" signature="14929:14948" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dinner/orderlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="80" column="58" lean-forward="false" selection-start-line="80" selection-start-column="58" selection-end-line="80" selection-end-column="58" />
           <folding />
         </state>
       </provider>
